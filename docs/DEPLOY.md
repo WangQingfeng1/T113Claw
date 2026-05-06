@@ -108,11 +108,11 @@ cd T113Claw
 
 ### 3.3 LVGL UI 构建说明
 
-- T113 构建会编译板端 LVGL UI，并使用 `reference_linux/app_sdk/lvgl` 作为 LVGL 源码参考树
-- 显示逻辑遵循 `reference_linux/app_sdk` 的旋转布局模型，而不是直接按原始 framebuffer 分辨率排版
+- T113 与 x86 构建都会直接使用项目内的 `lvgl/` 源码目录
+- 显示逻辑使用旋转布局模型，但相关端口代码已经内置在项目的 `platform/` 目录中
 - 当前端口里，`platform/t113/src/porting/lv_port_disp.c` 会在旋转后将逻辑宽度固定为 `280`
 - 中文字体资源默认来自 `data/ui/font/SOURCEHANSANSCN_REGULAR.OTF`
-- x86 `-linux` 构建会启动 SDL 模拟器，复用同一套 `ui_manager` / `page_chat` / `page_settings` 代码路径
+- x86 `-linux` 构建会使用 `platform/x86linux/src/porting/` 下的 SDL 端口层，复用同一套 `ui_manager` / `page_chat` / `page_settings` 代码路径
 - 音频与语音后端在 x86 侧仍为 no-op，因此桌面联调主要用于 UI 与主流程联调
 
 ### 3.4 清理
