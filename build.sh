@@ -5,7 +5,7 @@
 #        ./build.sh -clean    (remove build directory)
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-TOOLCHAIN_PATH="/home/feng/下载/toolchain-sunxi-glibc-gcc-830/toolchain/bin/"
+TOOLCHAIN_PATH="yours/toolchain-sunxi-glibc-gcc-830/toolchain/bin/"
 BUILD_DIR="${SCRIPT_DIR}/build"
 BUILD_STAMP="${BUILD_DIR}/.platform-stamp"
 

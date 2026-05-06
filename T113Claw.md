@@ -271,7 +271,7 @@ cd T113Claw
 
 ### T113 交叉编译
 
-**前提**：工具链已安装在 `/home/feng/下载/toolchain-sunxi-glibc-gcc-830/toolchain/bin/`
+**前提**：工具链已安装在 `/yours/toolchain-sunxi-glibc-gcc-830/toolchain/bin/`
 
 ```bash
 cd T113Claw
