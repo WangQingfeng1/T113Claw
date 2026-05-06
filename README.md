@@ -36,7 +36,7 @@ A micro AI agent running on the T113-S3 Linux development board. Chat via **CLI*
 └──────────┴──────────┴─────────┴───────────────────┘
            │ IPC (Unix Socket)
 ┌──────────┴────────────────────────────────────────┐
-│              t113claw_audio (音频进程)               │
+│              t113claw_audio （音频进程）            │
 │  ALSA capture/playback + codec init + amplifier   │
 └───────────────────────────────────────────────────┘
 ```
