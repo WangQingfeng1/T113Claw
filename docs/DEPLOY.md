@@ -20,7 +20,7 @@ sudo apt-get install -y adb
 
 工具链路径（已内置在 `build.sh` 中）：
 ```
-/home/yours/下载/toolchain-sunxi-glibc-gcc-830/toolchain/bin/
+/yours/toolchain-sunxi-glibc-gcc-830/toolchain/bin/
 ```
 
 如需修改，编辑 `build.sh` 中的 `TOOLCHAIN_PATH` 变量。
