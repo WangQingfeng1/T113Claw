@@ -1,2 +1,12 @@
-/build
-/t113claw_secrets.h
+# Build output
+build/
+
+# Secrets (never commit)
+t113claw_secrets.h
+
+# Runtime data (auto-generated)
+
+# IDE
+.vscode/
+*.swp
+*~
