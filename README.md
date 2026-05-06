@@ -142,7 +142,15 @@ T113Claw/
 ## On-device UI
 
 - Current pages: `Chat`, `Settings`
-- Settings views: `WIFI`, `SERVER LINK`, `SYSTEM`
+- `Chat`:![CHAT](images/CHAT.jpg)
+- `Settings`:  
+    WIFI:
+    ![WIFI](images/SETTINGS_WIFI.jpg)
+    SERVER_LINK:
+    ![SERVER_LINK](images/SETTINGS_SERVER_LINK.jpg)
+    SYSTEM:
+    ![SYSTEM](images/SETTINGS_SYSTEM.jpg)
+    
 - Entry points: top-right settings button, Chat 顶栏下滑进入 Settings；顶栏服务器图标与 WiFi 图标一样只显示状态，不作为页面入口
 - Startup order is UI-first: `main.c` 先做轻量初始化并尽早调用 `ui_manager_init()`，慢初始化放到后台 bootstrap 线程
 - Runtime state is live: Chat 页接入消息流、Voice/Agent 状态和底部运行时错误字；顶栏 WiFi / 服务器图标都按真实链路状态轮询刷新
