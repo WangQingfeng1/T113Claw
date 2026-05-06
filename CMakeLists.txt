@@ -9,7 +9,7 @@ add_compile_definitions(_GNU_SOURCE)
 
 set(T113CLAW_LVGL_DIR "${CMAKE_SOURCE_DIR}/lvgl")
 if(NOT EXISTS "${T113CLAW_LVGL_DIR}/CMakeLists.txt")
-    message(FATAL_ERROR "LVGL reference not found: ${T113CLAW_LVGL_DIR}")
+    message(FATAL_ERROR "LVGL source not found: ${T113CLAW_LVGL_DIR}")
 endif()
 
 # ── Platform detection ─────────────────────────────────────────
@@ -47,7 +47,10 @@ add_subdirectory(component/net)
 
 # ── LVGL / Porting ────────────────────────────────────────────
 if(SIMULATOR_LINUX)
-    set(T113CLAW_X86_PORT_DIR "${CMAKE_SOURCE_DIR}/../reference_linux/app_sdk/platform/x86linux/src/porting")
+    set(T113CLAW_X86_PORT_DIR "${CMAKE_SOURCE_DIR}/platform/x86linux/src/porting")
+    if(NOT EXISTS "${T113CLAW_X86_PORT_DIR}/monitor.c")
+        message(FATAL_ERROR "x86 Linux porting files not found: ${T113CLAW_X86_PORT_DIR}")
+    endif()
 
     add_library(lvgl_porting STATIC
         ${T113CLAW_X86_PORT_DIR}/monitor.c
@@ -120,7 +123,7 @@ add_subdirectory(${T113CLAW_LVGL_DIR} ${CMAKE_BINARY_DIR}/vendor/lvgl EXCLUDE_FR
 if(SIMULATOR_LINUX)
     target_include_directories(lvgl PUBLIC
         ${T113CLAW_LVGL_DIR}/..
-        ${CMAKE_SOURCE_DIR}/../reference_linux/app_sdk/platform/x86linux/src/porting
+        ${T113CLAW_X86_PORT_DIR}
         ${CMAKE_SOURCE_DIR}/platform/x86linux/include
         ${FREETYPE2_INCLUDE_DIRS}
     )

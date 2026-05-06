@@ -146,7 +146,6 @@ T113Claw/
 - Entry points: top-right settings button, Chat 顶栏下滑进入 Settings；顶栏服务器图标与 WiFi 图标一样只显示状态，不作为页面入口
 - Startup order is UI-first: `main.c` 先做轻量初始化并尽早调用 `ui_manager_init()`，慢初始化放到后台 bootstrap 线程
 - Runtime state is live: Chat 页接入消息流、Voice/Agent 状态和底部运行时错误字；顶栏 WiFi / 服务器图标都按真实链路状态轮询刷新
-- Display sizing follows `reference_linux/app_sdk` porting logic instead of raw framebuffer dimensions
 - In `platform/t113/src/porting/lv_port_disp.c`, the logical UI width is fixed to `280` after rotation, matching the proven reference layout model on the board
 - Chinese text rendering uses `data/ui/font/SOURCEHANSANSCN_REGULAR.OTF` via LVGL FreeType
 
